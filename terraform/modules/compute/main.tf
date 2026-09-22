@@ -22,7 +22,7 @@ resource "aws_launch_template" "swo_launch_template" {
   instance_type = "t3.small"
 
   vpc_security_group_ids = [var.security_group_id]
-  user_data              = base64encode("${path.module}/userdata.sh")
+  user_data              = filebase64("${path.module}/userdata.sh")
 
   tags = {
     Name        = "${var.environment}-swo-launch-template"
