@@ -13,7 +13,5 @@ output "public_subnet_id" {
 
 output "security_group_id" {
   description = "The ID of the security group"
-  value = [
-    aws_security_group.swo_sg.id
-  ]
+  value       = aws_security_group.swo_sg.id
 }
