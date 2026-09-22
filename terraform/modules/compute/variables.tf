@@ -1,6 +1,7 @@
 variable "environment" {
   description = "Environment name"
   type        = string
+  default     = "prod"
 }
 
 variable "security_group_id" {
