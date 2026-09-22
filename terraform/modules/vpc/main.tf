@@ -87,7 +87,7 @@ resource "aws_route_table_association" "swo_public_subnet_2_association" {
 # ====================================================================
 
 resource "aws_security_group" "swo_sg" {
-  vpc_id = aws_vpc.swo_vpc.id
+  vpc_id      = aws_vpc.swo_vpc.id
   description = "Allow inbound global traffic and restrict SSH access"
 
   ingress {
@@ -95,7 +95,7 @@ resource "aws_security_group" "swo_sg" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = [var.ingres_cidr_block]
-  } 
+  }
 
   ingress {
     from_port   = 22
