@@ -90,7 +90,7 @@ resource "aws_route_table_association" "swo_public_subnet_2_association" {
 # 5. Create Security Group (AWS Well-Architected Framework - Security Pillar)
 # ====================================================================
 
-resource "aws_security_group" " swo_sg" {
+resource "aws_security_group" "swo_sg" {
   vpc_id = aws_vpc.swo_vpc.id
   description = "Allow inbound global traffic and restrict SSH access"
 
