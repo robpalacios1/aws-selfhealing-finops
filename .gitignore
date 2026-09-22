@@ -1,0 +1,118 @@
+# ==========================================
+# Terraform
+# ==========================================
+# Archivos de estado local y directorios de plugins
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Archivos de variables con credenciales o secretos
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Archivos de configuración de CLI de Terraform
+.terraformrc
+terraform.rc
+
+# ==========================================
+# AWS & Credenciales / Secretos
+# ==========================================
+.aws/
+credentials
+*.pem
+*.key
+*.cer
+*.crt
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# Python (Lambdas, Scripts FinOps, Boto3)
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Entornos virtuales
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ==========================================
+# Node.js (por si usas AWS CDK o Serverless)
+# ==========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+cdk.out/
+.serverless/
+
+# ==========================================
+# Logs y Archivos Temporales
+# ==========================================
+*.log
+tmp/
+temp/
+
+# ==========================================
+# Sistema Operativo y Editores
+# ==========================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# JetBrains (IntelliJ, PyCharm, etc.)
+.idea/
+
+# VS Code (ignora caché e historial, permite configuraciones compartidas del equipo si lo deseas)
+.vscode/*
+.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
