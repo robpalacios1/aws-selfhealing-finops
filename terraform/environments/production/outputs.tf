@@ -30,3 +30,17 @@ output "prod_asg_arn" {
   description = "ASG ARN"
   value       = module.compute.asg_arn
 }
+
+# ====================================================================
+# Create FinOps outputs
+# ====================================================================
+
+output "finops_lambda_function_name" {
+  description = "lambda function name"
+  value       = module.finops.lambda_function_name
+}
+
+output "finops_iam_role_arn" {
+  description = "iam role arn"
+  value       = module.finops.lambda_role_arn
+}

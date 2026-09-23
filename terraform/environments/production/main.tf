@@ -11,3 +11,8 @@ module "compute" {
   security_group_id = module.vpc.security_group_id
   subnet_id         = module.vpc.public_subnet_id
 }
+
+module "finops" {
+  source      = "../../modules/finops"
+  environment = "production"
+}
