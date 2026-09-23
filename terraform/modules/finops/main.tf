@@ -33,10 +33,14 @@ resource "aws_iam_policy" "finops_lambda_policy" {
         Version = "2012-10-17"
         Statement = [
             {
+                Effect = "Allow"
                 Action = [
                     "ec2:DescribeInstances",
                     "ec2:StopInstances"
                 ]
+                Resource = "*"
+            },
+            {
                 Effect = "Allow"
                 Action = [
                     "logs:CreateLogGroup",
@@ -77,7 +81,7 @@ data "archive_file" "lambda_zip" {
 # ====================================================================
 
 resource "aws_lambda_function" "finops_ec2_stopper" {
-    filename      = "lambda_function.zip"
+    filename      = data.archive_file.lambda_zip.output_path
     function_name = "FinOps-EC2-AutoStop"
     role          = aws_iam_role.finops_lambda_role.arn
     handler       = "lambda_function.lambda_handler"
